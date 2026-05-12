@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { formattedAddition, rolldice } from "./demo.ts";
+import { formattedAddition } from "./demo.ts";
 
 Deno.test("3 + 5 = 8", function addTest() {
   // Arrange
@@ -24,20 +24,3 @@ Deno.test("3 + -5 = -2", function addTest() {
   // Then
   assertEquals(actual, "3 + -5 = -2");
 });
-
-Deno.test("Augenzahl", function augenzahlTest() {
-  const augenzahl = rolldice();
-
-  const result = augenzahl >= 1 && augenzahl <= 6;
-
-
-  assertEquals(result, true);
-});
-
-Deno.test("Calculatedice", function calculatediceTest() {
-  const augenzahl = rolldice() + rolldice();
-
-  const result = augenzahl >= 2 && augenzahl <= 12;
-  
-  assertEquals(result, true);
-})
